@@ -1,0 +1,20 @@
+Project Setup:
+1.              npm create vite@latest my-project -- --template react
+2.              npm install react-router-dom localforage match-sorter sort-by
+3.              npm install -D tailwindcss postcss autoprefixer
+4.              npx tailwindcss init -p
+5.              tailwind.config.js:
+                                        content: [
+                                        "./index.html",
+                                        "./src/**/*.{js,ts,jsx,tsx}",
+                                        ],
+
+6.              index.css:
+                            @tailwind base;
+                            @tailwind components;
+                            @tailwind utilities;                                        
+
+7.              npm i -D daisyui@latest
+8.              tailwind.config.js:
+                                     plugins: [require("daisyui")],
+9. npm run dev
