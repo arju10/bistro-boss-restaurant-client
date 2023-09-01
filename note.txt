@@ -18,3 +18,6 @@ Project Setup:
 8.              tailwind.config.js:
                                      plugins: [require("daisyui")],
 9. npm run dev
+
+10. https://github.com/brillout/awesome-react-components 
+11. npm i react-responsive-carousel
