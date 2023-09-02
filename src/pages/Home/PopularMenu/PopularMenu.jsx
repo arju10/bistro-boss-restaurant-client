@@ -6,6 +6,7 @@ import MenuItem from "../MenuItem/MenuItem";
 
 const PopularMenu = () => {
     const [menu, setMenu] = useState([]);
+    const popular = menu.filter(item => item.category === 'popular');
     useEffect(() => {
       fetch("menu.json")
       .then(res => res.json())
@@ -23,7 +24,7 @@ const PopularMenu = () => {
             ></SectionTitle>
             <div className="grid md:grid-cols-2 gap-10">
                 {
-                    menu.map(item => <MenuItem
+                    popular.map(item => <MenuItem
                         key={item._id}
                         item={item}
                     ></MenuItem>)

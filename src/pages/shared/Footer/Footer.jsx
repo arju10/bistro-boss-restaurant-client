@@ -2,7 +2,7 @@
 
 const Footer = () => {
     return (
-        <footer>
+        <footer className = "pt-5">
         <div className="footer p-10 bg-neutral text-neutral-content">
             <div >
             <span className="footer-title">CONTACT US</span>
