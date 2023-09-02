@@ -27,3 +27,4 @@ Project Setup:
                                              "react/prop-types":"off",
                                        },
 14.              npm i @smastrom/react-rating
+15.              npm i react-helmet-async
