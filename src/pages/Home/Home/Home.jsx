@@ -1,3 +1,4 @@
+import AboutBanner from '../AboutBanner/AboutBanner';
 import Banner from '../Banner/Banner';
 import CallUs from '../CallUs/CallUs';
 import Category from '../Category/Category';
@@ -12,6 +13,7 @@ const Home = () => {
         <div>
            <Banner/>
            <Category/>
+           <AboutBanner/>
            <PopularMenu/>
            <CallUs/>
            <Featured/>
