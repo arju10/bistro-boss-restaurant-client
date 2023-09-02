@@ -1,5 +1,5 @@
 import { useState } from "react";
-import SectionTitle from "../../components/SectionTitle/SectionTitle";
+import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import { useEffect } from "react";
 import MenuItem from "../MenuItem/MenuItem";
 

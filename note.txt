@@ -26,3 +26,4 @@ Project Setup:
                                  rules: {
                                              "react/prop-types":"off",
                                        },
+14.              npm i @smastrom/react-rating
