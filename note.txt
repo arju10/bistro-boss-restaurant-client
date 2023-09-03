@@ -29,3 +29,6 @@ Project Setup:
 14.              npm i @smastrom/react-rating
 15.              npm i react-helmet-async
 16.              npm i react-parallax
+17.              npm i react-tabs
+18.              npm install swiper react-id-swiper
+19.              npm install react-slick slick-carousel
