@@ -34,3 +34,4 @@ Project Setup:
 19.              npm install react-slick slick-carousel
 20.              npm i react-simple-captcha
 21.              npm install sweetalert2
+22.              npm install react-hook-form
