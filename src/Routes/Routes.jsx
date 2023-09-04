@@ -10,7 +10,6 @@ import SignUp from './../pages/SignUp/SignUp';
 import Secret from './../pages/shared/Secret/Secret';
 import PrivateRoute from "./PrivateRoute";
 import MyCart from "../pages/Dashboard/MyCart/MyCart";
-import MyCart from './../pages/Dashboard/MyCart/MyCart';
 import Dashboard from "../Layout/Dashboard";
 
 export const router = createBrowserRouter([
