@@ -33,11 +33,12 @@ const OrderTab = ({ items }) => {
     return (
         <div>
             <Slider {...settings}>
-                {items.map(item => (
-                    <div key={item._id} className='p-2'>
-                        <FoodCard item={item} />
-                    </div>
-                ))}
+            {
+                            items.map(item => <FoodCard
+                                key={item._id}
+                                item={item}
+                            ></FoodCard>)
+                        }
             </Slider>
         </div>
     );
