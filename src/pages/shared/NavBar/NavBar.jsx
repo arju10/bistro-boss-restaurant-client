@@ -22,22 +22,23 @@ const NavBar = () => {
     <li><Link to="/order">Our Shop</Link></li>
     <li><Link to="/secret">Secret</Link></li>
     <li>
-            <Link to="/">
-                <button className="btn glass gap-2">
-                    <FaShoppingCart></FaShoppingCart>
-                    <div className="badge badge-secondary ">+{cart?.length || 0}</div>
-                </button>
-            </Link>
-        </li>
+
+      <Link to="/dashboard/mycart">
+        <button className="btn glass gap-2">
+          <FaShoppingCart></FaShoppingCart>
+          <div className="badge badge-secondary ">+{cart?.length || 0}</div>
+        </button>
+      </Link>
+    </li>
     {/* {
       user ? <span>{user?.displayName}</span> : <li><Link to="/login">Login</Link></li>
     } */}
 
-{
-            user ?
-              <button onClick={handleLogOut} className="btn btn-secondary uppercase btn-ghost">Sign Out</button>
-              : <Link to="/login" className="btn uppercase btn-ghost">Login</Link>
-          }
+    {
+      user ?
+        <button onClick={handleLogOut} className="btn btn-secondary uppercase btn-ghost">Sign Out</button>
+        : <Link to="/login" className="btn uppercase btn-ghost">Login</Link>
+    }
   </>
 
   return (
