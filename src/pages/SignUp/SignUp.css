@@ -1,0 +1,5 @@
+.bg-opacity-overlay {
+    background: url('../../../assets//others/authentication.png') center/cover;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity here */
+  }
+  

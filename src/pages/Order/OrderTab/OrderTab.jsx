@@ -3,6 +3,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import FoodCard from './../../../components/SectionTitle/FoodCard/FoodCard';
 
+// TODO: implement pagination here on this page
 const OrderTab = ({ items }) => {
     const settings = {
         dots: true,

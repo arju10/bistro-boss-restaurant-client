@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
 import { useContext } from 'react';
+import { FaShoppingCart } from 'react-icons/fa';
 
 const NavBar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -10,6 +11,7 @@ const NavBar = () => {
       .then(() => { })
       .catch(error => console.log(error));
   }
+
   const navOptions = <>
     <li><Link to="/">Home</Link></li>
     <li><Link to="/">Contact Us</Link></li>
@@ -17,15 +19,25 @@ const NavBar = () => {
     <li><Link to="/menu">Our Menu</Link></li>
     <li><Link to="/order">Our Shop</Link></li>
     <li><Link to="/secret">Secret</Link></li>
-    {
-      user ? <>
-        <span>{user?.displayName}</span>
-        <button onClick={handleLogOut} className="btn btn-ghost">LogOut</button>
-      </> : <>
-        <li><Link to="/login">Login</Link></li>
-      </>
-    }
+    <li>
+            <Link to="/">
+                <button className="btn glass gap-2">
+                    <FaShoppingCart></FaShoppingCart>
+                    <div className="badge badge-secondary ">+0</div>
+                </button>
+            </Link>
+        </li>
+    {/* {
+      user ? <span>{user?.displayName}</span> : <li><Link to="/login">Login</Link></li>
+    } */}
+
+{
+            user ?
+              <button onClick={handleLogOut} className="btn btn-secondary uppercase btn-ghost">Sign Out</button>
+              : <Link to="/login" className="btn uppercase btn-ghost">Login</Link>
+          }
   </>
+
   return (
     <>
       <div className="navbar fixed z-10 bg-opacity-10 max-w-screen-xl bg-black text-white">
@@ -45,9 +57,13 @@ const NavBar = () => {
             {navOptions}
           </ul>
         </div>
-        <div className="navbar-end">
-          <Link to="/login" className="btn uppercase">Sign Out</Link>
-        </div>
+        {/* <div className="navbar-end">
+          {
+            user ?
+              <button onClick={handleLogOut} className="btn btn-secondary uppercase">Sign Out</button>
+              : <Link to="/login" className="btn uppercase">Login</Link>
+          }
+        </div> */}
       </div>
     </>
   );
