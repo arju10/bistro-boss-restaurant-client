@@ -40,6 +40,7 @@ const MyCart = () => {
 
 
     return (
+
         <div className="w-full">
             <Helmet>
                 <title>Bistro Boss | My Cart</title>
@@ -50,7 +51,7 @@ const MyCart = () => {
                     {/* head */}
                     <thead>
                         <tr>
-                            <th>#</th>
+                            <th>SI NO.</th>
                             <th>Food</th>
                             <th>Item Name</th>
                             <th>Price</th>
@@ -92,6 +93,7 @@ const MyCart = () => {
                 <button className="btn btn-warning btn-sm">PAY</button>
             </div>
         </div>
+
     );
 };
 
