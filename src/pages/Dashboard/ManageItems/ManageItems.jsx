@@ -51,7 +51,7 @@ const ManageItems = () => {
                                     <input type="checkbox" className="checkbox" />
                                 </label>
                             </th>
-                            <th>SI NO.</th>
+                            
                             <th>Item</th>
                             <th>Category</th>
                             <th>Price</th>
