@@ -14,13 +14,17 @@ const CheckoutForm = ({ price }) => {
 
     const [clientSecret, setClientSecret] = useState('');
 
+    const [processing, setProcessing] = useState(false);
+    const [transactionId, setTransactionId] = useState('');
+
     useEffect(() => {
+        console.log(price)
         axiosSecure.post('/create-payment-intent', { price })
             .then(res => {
                 // console.log(res.data.clientSecret)
                 setClientSecret(res.data.clientSecret);
             })
-    }, [price, axiosSecure])
+    },[])
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -45,9 +49,10 @@ const CheckoutForm = ({ price }) => {
         }
         else {
             setCardError('');
-            console.log('payment method', paymentMethod)
+            // console.log('payment method', paymentMethod)
         }
 
+        setProcessing(true)
         const { paymentIntent, error: confirmError } = await stripe.confirmCardPayment(
             clientSecret,
             {
@@ -65,7 +70,12 @@ const CheckoutForm = ({ price }) => {
             console.log(confirmError);
         }
 
-        console.log(paymentIntent)
+        console.log('payment intent', paymentIntent)
+        setProcessing(false)
+        if (paymentIntent.status === 'succeeded') {
+            setTransactionId(paymentIntent.id);
+            // TODO next steps
+        }
 
     }
 
@@ -88,7 +98,7 @@ const CheckoutForm = ({ price }) => {
                         },
                     }}
                 />
-                <button className="btn btn-primary btn-sm mt-4" type="submit" disabled={!stripe || !clientSecret}>
+               <button className="btn btn-primary btn-sm mt-4" type="submit" disabled={!stripe || !clientSecret || processing}>
                     Pay
                 </button>
             </form>
