@@ -1,6 +1,6 @@
 import {
-    createBrowserRouter
-  } from "react-router-dom";
+  createBrowserRouter
+} from "react-router-dom";
 import Main from "../Layout/Main";
 import Home from "../pages/Home/Home/Home";
 import Menu from "../pages/Menu/Menu/Menu";
@@ -16,62 +16,74 @@ import AdminRoute from './AdminRoute';
 import AddItem from "../pages/Dashboard/AddItem/AddItem";
 import ManageItems from "../pages/Dashboard/ManageItems/ManageItems";
 import Payment from '../pages/Dashboard/Payment/Payment';
+import UserHome from "../pages/Dashboard/UserHome/UserHome";
+import AdminHome from "../pages/Dashboard/AdminHome/AdminHome";
 
 export const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Main />,
+    children: [{
+      path: "/",
+      element: <Home />
+    },
     {
-        path:"/",
-        element:<Main/>,
-        children:[{
-            path:"/",
-            element:<Home/>
+      path: "menu",
+      element: <Menu />
+    },
+    {
+      path: "order",
+      element: <Order />
+    },
+    {
+      path: "login",
+      element: <Login />
+    },
+    {
+      path: 'signup',
+      element: <SignUp />
+    },
+    {
+      path: 'secret',
+      element: <PrivateRoute><Secret /></PrivateRoute>
+    },
+    {
+      path: 'dashboard',
+      element: <PrivateRoute><Dashboard /></PrivateRoute>,
+      children: [
+        {
+          path: 'userhome',
+          element: <UserHome />
         },
         {
-            path:"menu",
-            element:<Menu/>
+          path: 'mycart',
+          element: <MyCart />
         },
         {
-            path:"order",
-            element:<Order/>
+          path: 'payment',
+          element: <Payment />
+        },
+
+        
+        // admin routes
+        {
+          path: 'adminhome',
+          element: <AdminRoute><AdminHome /></AdminRoute>
         },
         {
-            path:"login",
-            element:<Login/>
+          path: 'allusers',
+          element: <AdminRoute><AllUsers /></AdminRoute>
         },
         {
-            path: 'signup',
-            element: <SignUp/>
-          },
-          {
-            path: 'secret',
-            element: <PrivateRoute><Secret/></PrivateRoute>
-          },
-          {
-            path: 'dashboard',
-            element: <PrivateRoute><Dashboard/></PrivateRoute>,
-            children: [
-              {
-                path: 'mycart', 
-                element: <MyCart/>
-              },
-              {
-                path:'payment',
-                element: <Payment/>
-              },
-              {
-                path: 'allusers', 
-                element: <AdminRoute><AllUsers/></AdminRoute>
-              },
-              {
-                path: 'addItem',
-                element: <AdminRoute><AddItem></AddItem></AdminRoute>
-              },
-              {
-                path: 'manageitems',
-                element: <AdminRoute><ManageItems/></AdminRoute>
-              }
-            ]
-          }
-    ]
+          path: 'addItem',
+          element: <AdminRoute><AddItem></AddItem></AdminRoute>
+        },
+        {
+          path: 'manageitems',
+          element: <AdminRoute><ManageItems /></AdminRoute>
+        }
+      ]
     }
+    ]
+  }
 ])
-    
